@@ -14,8 +14,84 @@
 </head>
 <body class="bg-info">
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto mt-4 mt-sm-5">
+            <div class="card text-center bg-primary-subtle">
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <span id="w-location">تهران</span>
+                    </h3>
+                    <h5 class="mb-0" id="w-main">تهران</h5>
+                    <img src="" alt="" id="w-icon">
+                    <ul class="list-group p-0">
+                        <li class="list-group-item d-sm-flex justify-content-sm-evenly">
+                            <div>
+                                دما : <span id="w-temp">30</span> کلوین
+                            </div>
+                            <div>
+                                کمترین دما : <span id="w-temp-min">28</span>
+                            </div>
+                            <div>
+                                بیشترین دما : <span id="w-temp-max">35</span>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            فشار : <span id="w-pressure"></span>
+                        </li>
+                        <li class="list-group-item">
+                            رطوبت : <span id="w-humidity"></span>
+                        </li>
+                        <li class="list-group-item">
+                            سرعت باد : <span id="w-wind-speed"></span>
+                        </li>
+                        <li class="list-group-item d-sm-flex justify-content-sm-evenly">
+                            <div>
+                                طول جغرافیایی : <span id="w-long"></span>
+                            </div>
+                            <div>
+                                عرض جغرافیایی : <span id="w-lat"></span>
+                            </div>
+                        </li>
+                    </ul>
+                    <button type="button" class="btn btn-info mt-3" data-bs-toggle="modal"
+                            data-bs-target="#locationModal">انتخاب موقعیت
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
+<!--Modal-->
+<div class="modal fade" id="locationModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-5" id="exampleModalLabel">موقعیت</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body my-4">
+                <form id="w-form">
+                    <div class="form-group">
+                        <label for="state">استان : </label>
+                        <input type="text" id="state" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="city">شهر : </label>
+                        <input type="text" id="city" class="form-control">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex justify-content-end">
+                <button type="button" class="btn btn-info" id="w-change-btn">اعمال تغییرات</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">بستن</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <!--  bootstrap js  -->

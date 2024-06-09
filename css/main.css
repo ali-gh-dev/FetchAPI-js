@@ -11,5 +11,11 @@
 
 body {
     font-family: "Vazir", serif, sans-serif;
+    font-size: 0.9rem !important;
     line-height: 1.6;
+}
+
+button[data-bs-toggle="modal"]{
+    /*background-color: rgb(207, 226, 255);*/
+    background-color: rgb(120, 159, 226);
 }
