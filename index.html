@@ -27,23 +27,45 @@
                     <ul class="list-group p-0">
                         <li class="list-group-item d-sm-flex justify-content-sm-evenly">
                             <div>
-                                دما : <span id="w-temp">30</span> کلوین
+                                دما :
+                                <span dir="ltr">
+                                    <span id="w-temp">???</span> &deg;C
+                                </span>
+
                             </div>
                             <div>
-                                کمترین دما : <span id="w-temp-min">28</span>
+                                کمترین دما :
+                                <span dir="ltr">
+                                    <span id="w-temp-min" class="text-info">???</span> &deg;C
+                                </span>
                             </div>
                             <div>
-                                بیشترین دما : <span id="w-temp-max">35</span>
+                                بیشترین دما :
+                                <span dir="ltr">
+                                    <span id="w-temp-max" class="text-danger">???</span> &deg;C
+                                </span>
                             </div>
                         </li>
                         <li class="list-group-item">
-                            فشار : <span id="w-pressure"></span>
+                            فشار :
+                            <span dir="ltr">
+                                <span id="w-pressure"></span> hPa
+                            </span>
                         </li>
                         <li class="list-group-item">
-                            رطوبت : <span id="w-humidity"></span>
+                            رطوبت :
+                            <span dir="ltr">
+                                <span id="w-humidity"></span> %
+                            </span>
+
+
                         </li>
                         <li class="list-group-item">
-                            سرعت باد : <span id="w-wind-speed"></span>
+                            سرعت باد :
+                            <span dir="ltr">
+                                <span id="w-wind-speed"></span> m/s
+                            </span>
+
                         </li>
                         <li class="list-group-item d-sm-flex justify-content-sm-evenly">
                             <div>
@@ -107,6 +129,7 @@
 </script>
 
 <!--  my custom js  -->
+<script src="./js/weather.js"></script>
 <script src="./js/script.js"></script>
 
 </body>
