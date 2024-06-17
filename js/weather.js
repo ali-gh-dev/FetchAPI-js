@@ -14,11 +14,16 @@ class Weather {
                 }
             })
             .then(data_obj => {
-                // console.log(data_obj);
-                const name = data_obj['name'];
-                const country = data_obj['sys']['country'];
+                console.log(data_obj);
+
+                // const name = data_obj['name'];
+                // const country = data_obj['sys']['country'];
+                const name = this.city;
                 $('#w-location').html(name);
-                $('#w-main').html(country);
+                const main = this.translate(data_obj['weather'][0]['main']);
+                $('#w-main').html(main);
+                const icon = data_obj['weather'][0]['icon'];
+                $('#w-icon').attr("src", `https://openweathermap.org/img/wn/${icon}@2x.png`);
                 const longitude = data_obj['coord']['lon'];
                 const latitude = data_obj['coord']['lat'];
                 $('#w-long').html(longitude);
@@ -41,5 +46,44 @@ class Weather {
 
     changeLocation(new_city) {
         this.city = new_city;
+    }
+
+    translate(main_weather) {
+        let result = "";
+        switch (main_weather) {
+            case "Rain":
+                result = "بارانی";
+                break;
+            case "Thunderstorm":
+                result = "رعد و برق";
+                break;
+            case "Drizzle":
+                result = "نم باران";
+                break;
+            case "Snow":
+                result = "برفی";
+                break;
+            case "Clear":
+                result = "صاف";
+                break;
+            case "Clouds":
+                result = "ابری";
+                break;
+            case 'Mist':
+            case 'Smoke':
+            case 'Haze':
+            case 'Dust':
+            case 'Fog':
+            case 'Sand':
+            case 'Ash':
+            case 'Squall':
+            case 'Tornado':
+                result = "گرد و غبار";
+                break;
+            default:
+                result = main_weather;
+                break;
+        }
+        return result;
     }
 }

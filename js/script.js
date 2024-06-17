@@ -1,5 +1,5 @@
-const default_location = new Weather("تهران");
-default_location.changeLocation("تبریز");
+const default_location = new Weather("زاهدان");
+// default_location.changeLocation("شیراز");
 
 function get_weather(){
     default_location.getWeather();
