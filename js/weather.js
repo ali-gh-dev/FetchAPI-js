@@ -14,7 +14,7 @@ class Weather {
                 }
             })
             .then(data_obj => {
-                console.log(data_obj);
+                // console.log(data_obj);
 
                 // const name = data_obj['name'];
                 // const country = data_obj['sys']['country'];
@@ -70,15 +70,27 @@ class Weather {
                 result = "ابری";
                 break;
             case 'Mist':
+                result = "مه";
+                break;
             case 'Smoke':
+                result = "دود";
+                break;
             case 'Haze':
-            case 'Dust':
-            case 'Fog':
+                result = "مه کم";
+                break;
             case 'Sand':
             case 'Ash':
+            case 'Dust':
+                result = "غبار";
+                break;
+            case 'Fog':
+                result = "مه سفید";
+                break;
             case 'Squall':
+                result = "طوفان";
+                break;
             case 'Tornado':
-                result = "گرد و غبار";
+                result = "گردباد";
                 break;
             default:
                 result = main_weather;
