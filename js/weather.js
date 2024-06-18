@@ -13,35 +13,38 @@ class Weather {
                     throw Error(`${res.status}`)
                 }
             })
-            .then(data_obj => {
-                // console.log(data_obj);
-
-                // const name = data_obj['name'];
-                // const country = data_obj['sys']['country'];
-                const name = this.city;
-                $('#w-location').html(name);
-                const main = this.translate(data_obj['weather'][0]['main']);
-                $('#w-main').html(main);
-                const icon = data_obj['weather'][0]['icon'];
-                $('#w-icon').attr("src", `https://openweathermap.org/img/wn/${icon}@2x.png`);
-                const longitude = data_obj['coord']['lon'];
-                const latitude = data_obj['coord']['lat'];
-                $('#w-long').html(longitude);
-                $('#w-lat').html(latitude);
-                const temp = data_obj['main']['temp'];
-                const temp_min = data_obj['main']['temp_min'];
-                const temp_max = data_obj['main']['temp_max'];
-                $('#w-temp').html(temp);
-                $('#w-temp-min').html(temp_min);
-                $('#w-temp-max').html(temp_max);
-                const pressure = data_obj['main']['pressure'];
-                const humidity = data_obj['main']['humidity'];
-                $('#w-pressure').html(pressure);
-                $('#w-humidity').html(humidity);
-                const wind_speed = data_obj['wind']['speed'];
-                $('#w-wind-speed').html(wind_speed);
+            .then(response_obj => {
+                // console.log(response_obj);
+                this.fixUI(response_obj);
             })
             .catch(err => console.log(err))
+    }
+
+    fixUI(data_obj) {
+        // const name = data_obj['name'];
+        // const country = data_obj['sys']['country'];
+        const name = this.city;
+        $('#w-location').html(name);
+        const main = this.translate(data_obj['weather'][0]['main']);
+        $('#w-main').html(main);
+        const icon = data_obj['weather'][0]['icon'];
+        $('#w-icon').attr("src", `https://openweathermap.org/img/wn/${icon}@2x.png`);
+        const longitude = data_obj['coord']['lon'];
+        const latitude = data_obj['coord']['lat'];
+        $('#w-long').html(longitude);
+        $('#w-lat').html(latitude);
+        const temp = data_obj['main']['temp'];
+        const temp_min = data_obj['main']['temp_min'];
+        const temp_max = data_obj['main']['temp_max'];
+        $('#w-temp').html(temp);
+        $('#w-temp-min').html(temp_min);
+        $('#w-temp-max').html(temp_max);
+        const pressure = data_obj['main']['pressure'];
+        const humidity = data_obj['main']['humidity'];
+        $('#w-pressure').html(pressure);
+        $('#w-humidity').html(humidity);
+        const wind_speed = data_obj['wind']['speed'];
+        $('#w-wind-speed').html(wind_speed);
     }
 
     changeLocation(new_city) {
@@ -98,4 +101,5 @@ class Weather {
         }
         return result;
     }
+
 }
